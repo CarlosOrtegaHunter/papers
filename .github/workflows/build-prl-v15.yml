@@ -17,5 +17,7 @@ jobs:
           latexmk_use_xelatex: false
       - uses: actions/upload-artifact@v4
         with:
-          name: prl-v15-pdf
-          path: prl_v15/main.pdf
+          name: prl-v15-release
+          path: |
+            prl_v15/main.pdf
+            prl_v15/main.tex
