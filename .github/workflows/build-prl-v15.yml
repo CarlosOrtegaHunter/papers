@@ -1,0 +1,19 @@
+name: build-prl-v15
+on:
+  push:
+    branches: [chatgpt/prl-v15-figures]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: prl_v15
+          latexmk_use_xelatex: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prl-v15-pdf
+          path: prl_v15/main.pdf
