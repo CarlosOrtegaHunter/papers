@@ -2,6 +2,8 @@ name: build-prl-v15
 on:
   push:
     branches: [chatgpt/prl-v15-figures]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 jobs:
   build:
